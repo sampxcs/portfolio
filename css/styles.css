@@ -22,11 +22,18 @@
 [data-theme="light"] {
   --letter: #202423;
   --shadow: #00000012;
-  --light-shadow: #a1fff1a9;
+  --light-shadow: #d167d1a9;
   --background: #f3f2ef;
   --dark-background: #fcfcfc;
   --light-background: #ffffff;
-  --focus-background: #009a83;
+  --focus-background: #9a0085;
+  --cmd-const: #3950b8;
+  --cmd-objet: #0085c7;
+  --cmd-arr: #25b3cc;
+  --cmd-prop: #0da6ff;
+  --cmd-text: #e0831f;
+  --cmd-num: #00a1db;
+  --cmd-tab: #a72fa3;
 }
 ::-webkit-scrollbar {
   background-color: var(--background);
@@ -213,68 +220,35 @@ nav[class="active"] #nav-title {
   transition: 0.2s;
 }
 .Contact-button {
-  height: 30px;
-  width: 30px;
-}
-.Contact-button a {
   background-image: url("../img/IMG_20200905_211704_821.jpg");
   background-size: cover;
   border-radius: 50%;
   box-shadow: 0 0 5px var(--shadow);
   display: block;
-  height: 100%;
-  width: 100%;
+  height: 30px;
+  width: 30px;
 }
 
 /* -------------------------- TOGGLE THEME -------------------------- */
 
 .toggle-theme {
-  width: 55px;
-  background-color: var(--background);
-  border-radius: 30px;
-  border: 2.5px solid var(--light-background);
+  background: none;
+  border: none;
   position: absolute;
-  bottom: 0px;
-  left: 70%;
-  margin: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: 0.4s;
-  padding: 3px 5px;
-}
-.toggle-theme .theme-icon {
-  color: var(--focus-background);
-  font-size: 16px;
-}
-.theme-selector {
-  height: 23px;
-  width: 23px;
-  background-color: var(--light-background);
-  border-radius: 50%;
-  position: absolute;
-  left: -1px;
   cursor: pointer;
-  transition: 0.3s;
+  color: var(--focus-background);
+  font-size: 18px;
+  bottom: 0px;
+  left: 75%;
+  margin: 22px;
+  transition: 0.4s;
 }
-#check-theme {
-  display: none;
-}
-#check-theme:checked ~ .theme-selector {
-  left: 27px;
-}
-[data-theme="light"] .theme-selector {
-  background-color: var(--focus-background);
-}
-[data-theme="light"] .toggle-theme {
-  border-color: var(--focus-background);
-}
-
 /* -------------------------- HEADER -------------------------- */
 
 .main {
-  margin-left: 60px;
   padding: 0 40px;
+  width: 80%;
+  margin: auto;
 }
 .header {
   align-items: center;
@@ -306,6 +280,9 @@ nav[class="active"] #nav-title {
 .card-perfil ul li {
   display: inline-block;
   margin: 5px 10px;
+}
+.card-perfil a:hover i {
+  color: var(--focus-background);
 }
 .card-perfil span {
   background-color: var(--focus-background);

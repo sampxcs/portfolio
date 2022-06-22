@@ -1,12 +1,22 @@
 (() => {
   "use strict";
 
-  let btnNav = document.querySelector(".btn-Nav");
-  let nav = document.querySelector("nav");
+  /* ------------------------------------------------------------- */
+  /* GLOBAL VARIABLES
+  /* ------------------------------------------------------------- */
+
+  const body = document.querySelector("body");
+  const nav = document.querySelector("nav");
+  const buttons = document.querySelectorAll(".btn");
+  const btnTheme = document.querySelector(".toggle-theme");
+  const initialTheme = "dark";
+
   let formSearch = document.querySelector(".search-form");
   let inputSearch = document.querySelector("#search-input");
   let btnSearch = document.querySelector("#search-button");
-  let buttons = document.querySelectorAll(".btn");
+  let btnNav = document.querySelector(".btn-Nav");
+
+  /* -------------------- FORM SEARCH VALIDATION -------------------- */
 
   formSearch.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -15,10 +25,15 @@
     btnSearch.classList.toggle("active");
   });
 
+
+  /* ------------------------- NAV ANIMATION ------------------------- */
+
   btnNav.addEventListener("click", () => {
     nav.classList.toggle("active");
     btnNav.classList.toggle("btn-active");
   });
+
+  /* ------------------------- BTN ANIMATION ------------------------- */
 
   buttons.forEach((btn) => {
     btn.onclick = function (e) {
@@ -38,9 +53,7 @@
     };
   });
 
-  const body = document.querySelector("body");
-  const btnTheme = document.querySelector(".theme-selector");
-  const initialTheme = "dark";
+  /* ------------------------ TOGGLE THEME ------------------------ */
 
   const setTheme = (theme) => {
     localStorage.setItem("theme", theme);
@@ -49,9 +62,14 @@
 
   const toggleTheme = () => {
     const activeTheme = localStorage.getItem("theme");
-
-    if (activeTheme == "light") setTheme("dark");
-    else setTheme("light");
+    if (activeTheme == "light") {
+      btnTheme.classList.replace("fa-moon", "fa-sun")
+      setTheme("dark")
+    }
+    else {
+      btnTheme.classList.replace("fa-sun", "fa-moon")
+      setTheme("light")
+    };
   };
 
   const setThemeOnInit = () => {
