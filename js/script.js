@@ -5,20 +5,24 @@
   /* GLOBAL VARIABLES
   /* ------------------------------------------------------------- */
 
-  const body = document.querySelector("body");
-  const nav = document.querySelector("nav");
-  const buttons = document.querySelectorAll(".btn");
-  const btnTheme = document.querySelector(".toggle-theme");
+  const $ = selector => document.querySelector(selector)
+  const $$ = selector => document.querySelectorAll(selector)
+  
+
+  const body = $("body");
+  const nav = $("nav");
+  const buttons = $$(".btn");
+  const btnTheme = $(".toggle-theme");
   const initialTheme = "dark";
 
-  let formSearch = document.querySelector(".search-form");
-  let inputSearch = document.querySelector("#search-input");
-  let btnSearch = document.querySelector("#search-button");
-  let btnNav = document.querySelector(".btn-Nav");
+  let formSearch = $(".search-form");
+  let inputSearch = $("#search-input");
+  let btnSearch = $("#search-button");
+  let btnNav = $(".btn-Nav");
 
   /* -------------------- FORM SEARCH VALIDATION -------------------- */
 
-  formSearch.addEventListener("submit", (e) => {
+  formSearch.addEventListener("submit", e => {
     e.preventDefault();
     inputSearch.value = "";
     inputSearch.classList.toggle("active");
@@ -36,7 +40,7 @@
   /* ------------------------- BTN ANIMATION ------------------------- */
 
   buttons.forEach((btn) => {
-    btn.onclick = function (e) {
+    btn.onclick = e => {
       console.log(e.clientX);
       console.log(e.target.offsetLeft);
       console.log(e.target.offsetTop);
@@ -55,7 +59,7 @@
 
   /* ------------------------ TOGGLE THEME ------------------------ */
 
-  const setTheme = (theme) => {
+  const setTheme = theme => {
     localStorage.setItem("theme", theme);
     body.setAttribute("data-theme", theme);
   };
