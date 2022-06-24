@@ -485,12 +485,11 @@ nav[class="active"] #nav-title {
 section {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 60px;
 }
-section h2 {
+section .section-title {
   font-size: 38px;
   align-self: flex-start;
 }
@@ -559,6 +558,7 @@ section h2 {
   bottom: 0;
   left: 0;
   box-shadow: 10px 100px 200px var(--light-shadow);
+  animation: moveShadowBefore 30s ease-in-out infinite;
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -569,10 +569,37 @@ section h2 {
   z-index: -1;
   top: 0;
   right: 0;
+  animation: moveShadowAfter 30s ease-in-out infinite;
   box-shadow: -10px -100px 200px var(--light-shadow);
   height: 200px;
   width: 200px;
   border-radius: 50%;
+}
+@keyframes moveShadowAfter {
+  0% {
+    box-shadow: -10px -100px 200px var(--light-shadow);
+  }
+  50% {
+    box-shadow: -500px -50px 200px var(--light-shadow);
+    height: 100px;
+    width: 100px;
+  }
+  100% {
+    box-shadow: -10px -100px 200px var(--light-shadow);
+  }
+}
+@keyframes moveShadowBefore {
+  0% {
+    box-shadow: 10px 100px 200px var(--light-shadow);
+  }
+  50% {
+    box-shadow: 500px 100px 200px var(--light-shadow);
+    height: 100px;
+    width: 100px;
+  }
+  100% {
+    box-shadow: 10px 100px 200px var(--light-shadow);
+  }
 }
 .cmd {
   display: flex;
@@ -656,13 +683,11 @@ section h2 {
   justify-content: center;
   flex-wrap: wrap;
 }
-#tools .tools-cars {
-  font-size: 22px;
-  height: 30px;
-  width: 30px;
-  background-color: var(--light-shadow);
+#tools .tools-icon {
+  font-size: 36px;
+  opacity: .6;
   border-radius: 50%;
-  margin: 20px 20px;
+  margin: 20px;
 }
 
 /* --------------------------------- CONTANCT --------------------------------- */
@@ -670,13 +695,12 @@ section h2 {
 .section-contact {
   background-color: var(--dark-background);
   box-shadow: 0 0 15px var(--shadow);
-  width: 90%;
+  width: 100%;
   max-width: 1030px;
-  margin: 0 auto 60px;
+  margin: 0 20px;
   padding: 30px;
   border-radius: 30px;
 }
-
 #contact h2 {
   font-size: 38px;
   margin-bottom: 10px;
@@ -687,6 +711,7 @@ section h2 {
 }
 .section-contact address {
   color: var(--letter);
+  line-height: 2;
   margin: 20px 0;
 }
 .section-contact address a {
@@ -712,8 +737,11 @@ section h2 {
 /* -------------------- FOOTER --------------------- */
 
 footer {
-  height: 60px;
+  min-height: 60px;
+  font-size: 12px;
+  line-height: 2;
   display: flex;
+  padding: 20px 0;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -745,6 +773,7 @@ footer ul li {
   }
   .main {
     width: 80%;
+    padding-left: 60px;
     max-width: 1200px;
   }
   .header {
@@ -769,23 +798,19 @@ footer ul li {
     top: 0;
   }
   .img-perfil img {
-    height: 390px;
-    width: 390px;
+    height: 290px;
+    width: 290px;
   }
   .img-perfil::before {
-    content: "";
-    height: 300px;
-    left: -120px;
+    height: 200px;
+    left: -60px;
     top: 120px;
-    width: 300px;
+    width: 200px;
   }
   .img-perfil::after {
-    content: "";
     box-shadow: -150px -100px 400px var(--light-shadow);
-    height: 390px;
-    width: 390px;
-    left: 0;
-    top: 0;
+    height: 290px;
+    width: 290px;
   }
   .see-more {
     right: 0;
@@ -801,9 +826,8 @@ footer ul li {
   .about-info-cmd {
     display: block;
   }
-  #tools i {
-    font-size: 26px;
-    margin: 20px 30px;
+  #tools .tools-icon {
+    font-size: 58px;
   }
   footer ul {
     position: absolute;
@@ -813,15 +837,39 @@ footer ul li {
   }
 }
 @media (min-width: 980px) {
+  .img-perfil img {
+    height: 390px;
+    width: 390px;
+  }
+  .img-perfil::before {
+    height: 300px;
+    left: -120px;
+    top: 120px;
+    width: 300px;
+  }
+  .img-perfil::after {
+    box-shadow: -150px -100px 400px var(--light-shadow);
+    height: 390px;
+    width: 390px;
+  }
+  .about-info-cmd {
+    width: 100%;
+  }
   .item-primary {
     width: 350px;
     height: 350px;
+  }
+  footer {
+    font-size: 16px;
   }
 }
 @media (min-width: 1360px) {
   section {
     flex-direction: row-reverse;
     align-items: flex-start;
+  }
+  .about-info-cmd {
+    width: auto;
   }
   .section-info-projects {
     padding: 10px;
@@ -835,5 +883,9 @@ footer ul li {
   }
   #about h2 {
     max-width: 900px;
+  }
+  #tools .tools-icon {
+    margin: 40px;
+    font-size: 62px;
   }
 }
