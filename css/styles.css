@@ -1,6 +1,7 @@
 :root {
   scroll-behavior: smooth;
   --letter: #ffffff;
+  --light-letter: #ffffffa2;
   --shadow: #00000044;
   --light-shadow: #a1fff144;
   --border-light: #a1fff11b;
@@ -23,12 +24,12 @@
 [data-theme="light"] {
   --letter: #202423;
   --shadow: #00000012;
-  --light-shadow: #70fbebde;
-  --border-light: #7ef3e542;
-  --background: #f3f2ef;
+  --light-shadow: #70dffbde;
+  --border-light: #7eeff342;
+  --background: #f5f5f5;
   --dark-background: #fcfcfc;
   --light-background: #ffffff;
-  --focus-background: #2a9d8f;
+  --focus-background: #00c3ff;
   --cmd-const: #3950b8;
   --cmd-objet: #0085c7;
   --cmd-arr: #25b3cc;
@@ -238,7 +239,7 @@ nav[class="active"] #nav-title {
   cursor: pointer;
   position: absolute;
   margin-left: 10px;
-  top: 35%;
+  top: 40%;
   line-height: 20px;
   transition: 0.2s;
 }
@@ -284,35 +285,53 @@ nav[class="active"] #nav-title {
   justify-content: center;
   width: 100%;
 }
+.social-ul {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 80px;
+  right: 0px;
+}
+.social-ul hr {
+  transform: rotate(90deg);
+  margin-top: 100px;
+  width: 100px;
+  border-color: var(--light-letter);
+}
+.social-ul li {
+  margin: 15px;
+  font-size: 18px;
+}
+.social-ul i {
+  color: var(--light-letter);;
+}
+.social-ul a:hover i {
+  color: var(--focus-background);
+}
 .card-perfil h1 {
   font-size: 28px;
 }
 .card-perfil h2 {
   line-height: 20px;
   font-size: 18px;
+  color: var(--light-letter);
+}
+.card-perfil h2:first-child {
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--focus-background);
 }
 .card-perfil .h3 {
+  color: var(--light-letter);
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   font-weight: 700;
   font-size: 22px;
   margin-top: 5px;
-}
-.card-perfil .fab {
-  font-size: 18px;
-}
-.card-perfil ul {
-  padding-left: 10px;
-}
-.card-perfil ul li {
-  display: inline-block;
-  margin: 5px 10px;
-}
-.card-perfil a:hover i {
-  color: var(--focus-background);
 }
 .card-perfil .rotate-words {
   display: inline;
@@ -400,7 +419,7 @@ nav[class="active"] #nav-title {
   top: 0;
 }
 
-/* -------------------------- ARROW & IDIOM FORM -------------------------- */
+/* -------------------------- ARROW & LANG FORM -------------------------- */
 
 .see-more {
   position: absolute;
@@ -428,7 +447,7 @@ nav[class="active"] #nav-title {
 }
 form[name="lang-form"] {
   position: absolute;
-  top: 15px;
+  top: 25px;
   right: 10px;
 }
 select {
@@ -497,10 +516,14 @@ section .section-title {
 }
 .section-info-projects p,
 .section-info-about {
+  color: var(--light-letter);
   line-height: 22px;
   max-height: none;
   margin: 15px 0;
   font-size: 18px;
+}
+.section-info-about p {
+  color: var(--light-letter);
 }
 
 /* --------------------------- ABOUT -------------------------- */
@@ -662,6 +685,7 @@ section .section-title {
 
 .section-contact {
   background-color: var(--dark-background);
+  position: relative;
   box-shadow: 0 0 15px var(--shadow);
   width: 80%;
   max-width: 1030px;
@@ -705,7 +729,7 @@ section .section-title {
   position: absolute;
   z-index: -1;
   bottom: 0;
-  left: 100px;
+  left: 0;
   box-shadow: -100px 100px 200px var(--light-shadow);
   animation: light-move 12s ease-in-out infinite;
   height: 200px;
@@ -825,7 +849,7 @@ footer ul li {
     width: 290px;
   }
   .see-more {
-    right: 0;
+    right: 40px;
   }
   section {
     flex-direction: row;
@@ -855,13 +879,32 @@ footer ul li {
   }
 }
 @media (min-width: 980px) {
+  .social-ul {
+    display: flex;
+  }
+  .card-perfil h2 {
+    font-size: 38px;
+  }
+  .card-perfil h1 {
+    font-size: 48px;
+  }
+  .card-perfil .h3 {
+    font-size: 38px;
+  }
+  .card-perfil .rotate-words {
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    margin-left: 10px;
+  }
   .img-perfil img {
     height: 390px;
     width: 390px;
   }
   .img-perfil::before {
     height: 300px;
-    left: -120px;
+    left: -80px;
     top: 120px;
     width: 300px;
   }
@@ -879,6 +922,21 @@ footer ul li {
   }
 }
 @media (min-width: 1360px) {
+  .img-perfil img {
+    height: 470px;
+    width: 470px;
+  }
+  .img-perfil::before {
+    height: 370px;
+    left: -120px;
+    top: 120px;
+    width: 370px;
+  }
+  .img-perfil::after {
+    box-shadow: -150px -100px 400px var(--light-shadow);
+    height: 470px;
+    width: 470px;
+  }
   section {
     flex-direction: row-reverse;
     align-items: flex-start;
@@ -909,5 +967,114 @@ footer ul li {
   }
   .section-contact {
     width: 100%;
+  }
+  .card-perfil h2 {
+    font-size: 48px;
+  }
+  .card-perfil h1 {
+    font-size: 78px;
+  }
+  .card-perfil .h3 {
+    font-size: 38px;
+    margin-top: 10px;
+  }
+  .card-perfil .rotate-words {
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  @keyframes show-down {
+    0% {
+      top: -100%;
+      opacity: 1;
+    }
+    5%,
+    35% {
+      top: 10px;
+      opacity: 1;
+    }
+    38% {
+      top: 100%;
+      opacity: 1;
+    }
+    45% {
+      opacity: 0;
+    }
+  }
+}
+@media (min-width: 1605px) {
+  .main {
+    max-width: 1580px;
+  }
+  .card-perfil h2 {
+    font-size: 54px;
+  }
+  .card-perfil h1 {
+    font-size: 84px;
+  }
+  .card-perfil .h3 {
+    font-size: 44px;
+    margin-top: 20px;
+  }
+  .card-perfil .rotate-words {
+    border-radius: 10px;
+    width: 300px;
+    height: 60px;
+    font-size: 26px;
+  }
+  select {
+    font-size: 12px;
+  }
+  .item-primary {
+    width: 450px;
+    height: 450px;
+  }
+  .section-info-projects {
+    padding: 10px;
+    max-width: 380px;
+  }
+  .section-info-projects p {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .about-info-cmd p {
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    font-size: 18px;
+  }
+  .about-info-cmd {
+    max-width: 1120px;
+    margin: 0 20px;
+    height: 410px;
+    padding: 30px 40px;
+    box-shadow: 0 0 15px var(--shadow);
+    background-color: var(--dark-background);
+  }
+  .section-info-about p {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  #tools .tools-icon {
+    margin: 50px;
+    font-size: 82px;
+  }
+  .section-contact {
+    max-width: 1350px;
+  }
+  #contact h2 {
+    font-size: 48px;
+  }
+  .section-contact hr {
+    width: 70%;
+  }
+  .section-contact-content h3 {
+    font-size: 36px;
+  }
+  .section-contact-content p {
+    font-size: 26px;
+    line-height: 1.2;
   }
 }

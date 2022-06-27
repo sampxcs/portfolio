@@ -10,6 +10,7 @@
   const sections = $$("section");
   const selectLang = $("select");
   const btnNav = $(".btn-Nav");
+  const navLinks = $$(".nav-link")
   const initialTheme = "dark";
 
   /* -------------------- SCROLL ANIMATION -------------------- */
@@ -29,10 +30,10 @@
   const setLang = () => {
     switch (selectLang.value) {
       case 'en':
-          location.href='/index.html'
+        location.href = '/index.html'
         break;
       case 'es':
-        location.href='es/index.html'
+        location.href = 'es/index.html'
         break
     }
   }
@@ -40,10 +41,14 @@
 
   /* ------------------------- NAV ANIMATION ------------------------- */
 
-  btnNav.addEventListener("click", () => {
+  const activeNav = () => {
     nav.classList.toggle("active");
     btnNav.classList.toggle("btn-active");
-  });
+  }
+  btnNav.addEventListener("click", activeNav);
+  navLinks.forEach(link => {
+    link.addEventListener("click", activeNav);
+  })
 
   /* ------------------------ TOGGLE THEME ------------------------ */
 
@@ -51,7 +56,6 @@
     localStorage.setItem("theme", theme);
     body.setAttribute("data-theme", theme);
   };
-
   const toggleTheme = () => {
     const activeTheme = localStorage.getItem("theme");
     if (activeTheme == "light") {
@@ -62,15 +66,12 @@
       setTheme("light");
     }
   };
-
   const setThemeOnInit = () => {
     const savedTheme = localStorage.getItem("theme");
     savedTheme
       ? body.setAttribute("data-theme", savedTheme)
       : setTheme(initialTheme);
   };
-
   setThemeOnInit();
-
   btnTheme.addEventListener("click", toggleTheme);
 })();
