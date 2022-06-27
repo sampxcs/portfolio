@@ -1,34 +1,42 @@
 (() => {
   "use strict";
 
-  /* ------------------------------------------------------------- */
-  /* GLOBAL VARIABLES
-  /* ------------------------------------------------------------- */
-
-  const $ = selector => document.querySelector(selector)
-  const $$ = selector => document.querySelectorAll(selector)
-  
+  const $ = (selector) => document.querySelector(selector);
+  const $$ = (selector) => document.querySelectorAll(selector);
 
   const body = $("body");
   const nav = $("nav");
-  const buttons = $$(".btn");
   const btnTheme = $(".toggle-theme");
+  const sections = $$("section");
+  const selectLang = $("select");
+  const btnNav = $(".btn-Nav");
   const initialTheme = "dark";
 
-  let formSearch = $(".search-form");
-  let inputSearch = $("#search-input");
-  let btnSearch = $("#search-button");
-  let btnNav = $(".btn-Nav");
+  /* -------------------- SCROLL ANIMATION -------------------- */
 
-  /* -------------------- FORM SEARCH VALIDATION -------------------- */
+  const showSection = () => {
+    sections.forEach((section) => {
+      if (section.offsetTop - 700 < document.documentElement.scrollTop) {
+        section.style.opacity = "1";
+        section.style.transform = "translateY(0)";
+      }
+    });
+  };
+  window.addEventListener("scroll", showSection);
 
-  formSearch.addEventListener("submit", e => {
-    e.preventDefault();
-    inputSearch.value = "";
-    inputSearch.classList.toggle("active");
-    btnSearch.classList.toggle("active");
-  });
+  /* -------------------- SELECT LANG -------------------- */
 
+  const setLang = () => {
+    switch (selectLang.value) {
+      case 'en':
+          location.href='/index.html'
+        break;
+      case 'es':
+        location.href='es/index.html'
+        break
+    }
+  }
+  selectLang.addEventListener('change', setLang)
 
   /* ------------------------- NAV ANIMATION ------------------------- */
 
@@ -37,29 +45,9 @@
     btnNav.classList.toggle("btn-active");
   });
 
-  /* ------------------------- BTN ANIMATION ------------------------- */
-
-  buttons.forEach((btn) => {
-    btn.onclick = e => {
-      console.log(e.clientX);
-      console.log(e.target.offsetLeft);
-      console.log(e.target.offsetTop);
-      let x = e.clientX - e.target.offsetLeft;
-      let y = e.clientY - e.target.offsetTop;
-      console.log(x, y);
-      let ripple = document.createElement("span");
-      ripple.style.left = `${x}px`;
-      ripple.style.top = `${y}px`;
-      this.appendChild(ripple);
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
-    };
-  });
-
   /* ------------------------ TOGGLE THEME ------------------------ */
 
-  const setTheme = theme => {
+  const setTheme = (theme) => {
     localStorage.setItem("theme", theme);
     body.setAttribute("data-theme", theme);
   };
@@ -67,13 +55,12 @@
   const toggleTheme = () => {
     const activeTheme = localStorage.getItem("theme");
     if (activeTheme == "light") {
-      btnTheme.classList.replace("fa-moon", "fa-sun")
-      setTheme("dark")
+      btnTheme.classList.replace("fa-moon", "fa-sun");
+      setTheme("dark");
+    } else {
+      btnTheme.classList.replace("fa-sun", "fa-moon");
+      setTheme("light");
     }
-    else {
-      btnTheme.classList.replace("fa-sun", "fa-moon")
-      setTheme("light")
-    };
   };
 
   const setThemeOnInit = () => {
