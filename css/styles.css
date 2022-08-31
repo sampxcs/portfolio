@@ -989,13 +989,13 @@ footer hr {
     max-width: 1580px;
   }
   .card-perfil h2 {
-    font-size: 64px;
+    font-size: 52px;
   }
   .card-perfil h1 {
-    font-size: 74px;
+    font-size: 62px;
   }
   .card-perfil .h3 {
-    font-size: 64px;
+    font-size: 52px;
     margin-top: 10px;
   }
   .card-perfil .rotate-words {
@@ -1023,19 +1023,19 @@ footer hr {
     }
   }
   .img-perfil img {
-    height: 590px;
-    width: 590px;
+    height: 490px;
+    width: 490px;
   }
   .img-perfil::before {
-    height: 450px;
+    height: 350px;
     left: -120px;
     top: 190px;
-    width: 450px;
+    width: 350px;
   }
   .img-perfil::after {
     box-shadow: -150px -100px 400px var(--light-shadow);
-    height: 590px;
-    width: 590px;
+    height: 490px;
+    width: 490px;
   }
   select {
     font-size: 12px;
