@@ -480,6 +480,8 @@ section {
 }
 #projects {
   margin-top: 20px;
+  display: flex;
+  gap: 40px;
 }
 section .section-title {
   align-self: flex-start;
@@ -491,13 +493,9 @@ section .section-title {
   border-right: 1px inset var(--border-light);
   box-shadow: 0 0 15px var(--shadow);
   cursor: pointer;
-  height: max-content;
   overflow: hidden;
   position: relative;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .projects-container {
@@ -505,11 +503,11 @@ section .section-title {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 25px;
+  gap: 5px;
 }
 .projects-content {
   display: flex;
-  max-width: 80%;
+  width: 80%;
   justify-content: center;
   gap: 20px;
 }
@@ -519,13 +517,22 @@ section .section-title {
 .section-info-projects {
   display: none;
   padding-top: 15px;
-  width: 40%;
+  width: 50%;
+  position: relative;
 }
 .section-info-projects-02 {
-  width: 110%;
+  width: 195%;
 }
-
+.item-primary-mobile {
+  display: none;
+  background-color: #fafafa;
+}
+.view-project-links {
+  position: absolute;
+  bottom: 80px;
+}
 .item-primary video {
+  height: 101%;
   width: 100%;
   object-fit: cover;
 }
@@ -548,9 +555,8 @@ section .section-title {
 }
 .section-title-projects,
 .section-info-about {
-  margin: 30px 10px;
   max-width: 80%;
-  padding: 10px;
+  padding: 0 10px;
   width: 100%;
 }
 .section-title-projects p,
@@ -560,6 +566,14 @@ section .section-title {
   line-height: 1.4;
   margin: 15px 0;
   max-height: none;
+}
+
+.section-info-projects p {
+  font-size: 10px;
+  color: var(--light-letter);
+  margin: 0;
+  max-height: 100%;
+  overflow: hidden;
 }
 .section-info-about p {
   color: var(--light-letter);
@@ -736,10 +750,6 @@ section .section-title {
   font-size: 38px;
   margin-bottom: 10px;
 }
-.section-contact hr {
-  margin: 25px 0;
-  width: 60%;
-}
 .section-contact address {
   color: var(--letter);
   line-height: 2;
@@ -835,6 +845,9 @@ footer hr {
   .section-info-projects {
     display: block;
   }
+  .item-primary-mobile {
+    display: block; 
+  }
   nav {
     padding: 20px 15px;
     width: 60px;
@@ -911,6 +924,10 @@ footer hr {
   .social-ul {
     display: flex;
   }
+  .section-info-projects p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
   .card-perfil h2 {
     font-size: 38px;
   }
@@ -967,6 +984,12 @@ footer hr {
 @media (min-width: 1360px) {
   .img-perfil::before {
     left: -120px;
+  }
+  .section-info-projects-01 {
+    width: 35%;
+  }
+  .item-primary-mobile {
+    transform: translateY(-60px);
   }
   .social-ul hr {
     margin-top: 60px;
@@ -1073,6 +1096,12 @@ footer hr {
   .section-title-projects p {
     font-size: 26px;
     line-height: 1.2;
+  }
+  .section-info-title {
+    font-size: 22px;
+  }
+  .section-info-projects p {
+    font-size: 18px;
   }
   .about-info-cmd p {
     font-size: 18px;
