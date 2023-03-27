@@ -72,4 +72,39 @@
   }
   setThemeOnInit()
   btnTheme.addEventListener('click', toggleTheme)
+
+  /* ------------------- ANIMATION CARD ---------------------- */
+
+  const wrappers = $$('.wrapper-3d')
+
+  wrappers.forEach((wrapper) => {
+    let { width, height } = wrapper.getBoundingClientRect()
+    let halfWidth = width / 2
+    let halfHeight = height / 2
+
+    window.addEventListener('resize', () => {
+      width = wrapper.getBoundingClientRect().width
+      height = wrapper.getBoundingClientRect().height
+      halfWidth = width / 2
+      halfHeight = height / 2
+    })
+
+    wrapper.addEventListener('mousemove', (event) => {
+      const { offsetX, offsetY } = event
+
+      const rotateX = ((offsetX - halfWidth) / halfWidth) * 5
+      const rotateY = ((offsetY - halfHeight) / halfHeight) * 5
+
+      if (wrapper.children[0].children[0].classList[0] == 'wrapper-3d-light') {
+        wrapper.children[0].children[0].style.top = `calc(${offsetY}px - 200px)`
+        wrapper.children[0].children[0].style.left = `calc(${offsetX}px - 200px)`
+      }
+
+      wrapper.children[0].style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    })
+
+    wrapper.addEventListener('mouseleave', () => {
+      wrapper.children[0].style.transform = 'rotateX(0deg) rotateY(0deg)'
+    })
+  })
 })()
