@@ -1,0 +1,100 @@
+/* ------------------ WRAPPER 3D ANIMATED ------------------ */
+
+.wrapper-3d {
+  position: relative;
+  perspective: 1000px;
+}
+.wrapper-3d-light {
+  position: absolute;
+}
+.wrapper-3d:hover .wrapper-3d-light {
+  z-index: -1;
+  display: block;
+  width: 400px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background-color: var(--focus-background-20);
+  pointer-events: none;
+}
+
+.ticket-3d {
+  transition: 0.4s ease;
+  overflow: hidden;
+}
+
+/* ------------------ TEXT DECORATION ANIMATED ------------------ */
+
+.text-decoration-animated {
+  animation: text-decoration-in 0.5s cubic-bezier(0.694, 0, 0.335, 1) forwards;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 51% 3px, 50% 3px;
+  bottom: 0;
+  position: relative;
+}
+.text-decoration-animated:hover {
+  animation: text-decoration-out 0.3s cubic-bezier(0.694, 0, 0.335, 1) forwards;
+}
+.text-decoration-animated i {
+  margin-left: 5px;
+  transition: transform 0.25s 0.3s cubic-bezier(0, 0, 0.5, 2);
+}
+.text-decoration-animated:hover i {
+  transform: translateX(6px);
+}
+
+@keyframes text-decoration-in {
+  0% {
+    background-position: -200% 75%, -100% 75%;
+  }
+  100% {
+    background-position: 0 75%, 100% 75%;
+  }
+}
+
+@keyframes text-decoration-out {
+  0% {
+    background-position: 0 75%, 100% 75%;
+  }
+  100% {
+    background-position: 205% 75%, 300% 75%;
+  }
+}
+
+.text-decoration-animated-p {
+  animation: text-decoration-in-p 0.5s cubic-bezier(0.694, 0, 0.335, 1) forwards;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 51% 1px, 50% 1px;
+  bottom: 0;
+  cursor: default;
+  position: relative;
+}
+.text-decoration-animated-p:hover {
+  animation: text-decoration-out-p 0.3s cubic-bezier(0.694, 0, 0.335, 1) forwards;
+}
+.text-decoration-animated-p i {
+  margin-left: 5px;
+  transition: transform 0.25s 0.3s cubic-bezier(0, 0, 0.5, 2);
+}
+.text-decoration-animated-p:hover i {
+  transform: translateX(6px);
+}
+
+@keyframes text-decoration-in-p {
+  0% {
+    background-position: -200% 105%, -100% 105%;
+  }
+  100% {
+    background-position: 0 105%, 100% 105%;
+  }
+}
+
+@keyframes text-decoration-out-p {
+  0% {
+    background-position: 0 105%, 100% 105%;
+  }
+  100% {
+    background-position: 205% 105%, 300% 105%;
+  }
+}

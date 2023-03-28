@@ -1,0 +1,34 @@
+.img-perfil {
+  position: relative;
+  top: 30px;
+}
+.img-perfil img {
+  border-radius: 50%;
+  height: 190px;
+  box-shadow: 0 0 30px var(--shadow);
+  width: 190px;
+}
+.img-perfil::before {
+  background-color: var(--focus-background);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--shadow);
+  content: '';
+  height: 100px;
+  left: -20px;
+  position: absolute;
+  top: 120px;
+  width: 100px;
+  z-index: -1;
+}
+.img-perfil::after {
+  border-radius: 50%;
+  background-color: var(--focus-background-20);
+  filter: blur(100px);
+  content: '';
+  height: 190px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 190px;
+  z-index: -2;
+}

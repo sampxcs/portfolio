@@ -1,0 +1,191 @@
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.social-ul-mobile {
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-around;
+  margin: 10px auto 0;
+  width: 150px;
+}
+.social-ul {
+  align-items: center;
+  bottom: 80px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  right: 0px;
+}
+.social-ul hr {
+  border: 1px solid var(--light-letter);
+  margin-top: 2.5rem;
+  transform: rotate(90deg);
+  width: 60px;
+}
+.social-ul li {
+  font-size: 16px;
+  margin: 5px 1.25rem;
+}
+.social-ul i {
+  color: var(--light-letter);
+}
+.social-ul a:hover i {
+  color: var(--focus-background);
+}
+.card-perfil h1 {
+  font-size: 28px;
+}
+.card-perfil h2 {
+  color: var(--light-letter);
+  font-size: 18px;
+}
+.card-perfil h2:first-child {
+  color: var(--focus-background);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card-perfil .h3 {
+  align-items: center;
+  color: var(--light-letter);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 22px;
+  font-weight: 700;
+  justify-content: center;
+  position: relative;
+}
+.card-perfil .rotate-words {
+  background-color: var(--focus-background);
+  border-radius: 5px;
+  box-shadow: 0 0 1.25rem var(--shadow);
+  display: inline;
+  font-size: 12px;
+  height: 2.5rem;
+  margin-left: 10px;
+  min-width: 8.25rem;
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+  width: 150px;
+}
+.rotate-words span {
+  color: var(--light-background);
+  font-family: sans-serif;
+  font-weight: 900;
+  left: 12px;
+  opacity: 0;
+  position: absolute;
+  top: -100%;
+  transform-origin: 10% 75%;
+}
+.rotate-words span:first-child {
+  animation: show-down 12s ease-in-out infinite;
+}
+.rotate-words span:nth-child(0n + 2) {
+  animation: show-down 12s 4s ease-in-out infinite;
+}
+.rotate-words span:last-child {
+  animation: show-down 12s 8s ease-in-out infinite;
+}
+@keyframes show-down {
+  0% {
+    top: -100%;
+    opacity: 1;
+  }
+  5%,
+  35% {
+    top: 6px;
+  }
+  38% {
+    top: 100%;
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+}
+/* -------------------------- PERFIL IMAGEN -------------------------- */
+
+.img-perfil {
+  position: relative;
+  top: 2.5rem;
+}
+.img-perfil img {
+  border-radius: 50%;
+  height: 190px;
+  box-shadow: 0 0 2.5rem var(--shadow);
+  width: 190px;
+}
+.img-perfil::before {
+  background-color: var(--focus-background);
+  border-radius: 50%;
+  box-shadow: 0 0 1.25rem var(--shadow);
+  content: '';
+  height: 8.25rem;
+  left: -20px;
+  position: absolute;
+  top: 120px;
+  width: 8.25rem;
+  z-index: -1;
+}
+.img-perfil::after {
+  border-radius: 50%;
+  background-color: var(--focus-background-20);
+  filter: blur(100px);
+  content: '';
+  height: 190px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 190px;
+  z-index: -2;
+}
+
+/* -------------------------- ARROW & LANG FORM -------------------------- */
+
+.see-more {
+  bottom: 0;
+  position: absolute;
+}
+.arrow {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: center;
+  width: 3.25rem;
+}
+.line-arrow {
+  background-color: var(--focus-background);
+  height: 2px;
+  margin: 0 -3.5px;
+  width: 1.75rem;
+}
+.line-arrow:nth-child(1) {
+  transform: rotate(45deg);
+}
+.line-arrow:nth-child(2) {
+  transform: rotate(-45deg);
+}
+form[name='lang-form'] {
+  position: absolute;
+  right: 10px;
+  top: 25px;
+}
+select {
+  background-color: var(--light-background);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  outline: none;
+  padding: 5px 10px;
+}

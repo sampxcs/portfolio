@@ -1,0 +1,53 @@
+.tag-list {
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.loop-slider .inner {
+  display: flex;
+  width: fit-content;
+  animation-name: loop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 90s;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 0.5rem;
+  color: var(--letter);
+  font-size: 1rem;
+  background-color: var(--dark-background);
+  border-radius: 10px;
+  padding: 1.25rem 2.5rem;
+  margin-right: 1.5rem;
+  box-shadow: 0 0 1.25rem var(--shadow);
+}
+
+.tag i {
+  color: #414645;
+}
+
+.fade {
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--background), transparent 30%, transparent 70%, var(--background));
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,73 @@
+:root {
+  --background: #202423;
+  --border-light: #a1fff11b;
+  --cmd-arr: #2dc7e2;
+  --cmd-const: #4c68e3;
+  --cmd-green: #6eff76;
+  --cmd-line: #595959;
+  --cmd-num: #66c3e6;
+  --cmd-objet: #00aaff;
+  --cmd-prop: #7fd0ff;
+  --cmd-red: #ff0000;
+  --cmd-tab: #e54ee0;
+  --cmd-text: #f09939;
+  --cmd-yellow: #ffd500;
+  --dark-background: #121514;
+  --dark-background-40: #13161566;
+  --focus-background: #00ffd9;
+  --focus-background-20: #00ffd933;
+  --letter: #ffffff;
+  --light-background: #414645;
+  --light-letter: #ffffffa2;
+  --light-shadow: #a1fff144;
+  --shadow: #00000044;
+  scroll-behavior: smooth;
+}
+[data-theme='light'] {
+  --background: #f5f5f5;
+  --border-light: #7eeff342;
+  --cmd-arr: #25b3cc;
+  --cmd-const: #3950b8;
+  --cmd-num: #00a1db;
+  --cmd-objet: #0085c7;
+  --cmd-prop: #0da6ff;
+  --cmd-tab: #a72fa3;
+  --cmd-text: #e0831f;
+  --dark-background: #fcfcfc;
+  --dark-background-40: #fcfcfc66;
+  --focus-background: #00c3ff;
+  --letter: #29312f;
+  --light-background: #ffffff;
+  --light-letter: #454545;
+  --light-shadow: #70dffbde;
+  --shadow: #00000012;
+}
+::-webkit-scrollbar {
+  background-color: var(--background);
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--focus-background);
+}
+::selection {
+  background-color: var(--focus-background);
+  color: var(--light-background);
+}
+* {
+  box-sizing: border-box;
+  color: var(--letter);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+body {
+  background-color: var(--background);
+  position: relative;
+}
+.main {
+  width: 100%;
+  margin: auto;
+}

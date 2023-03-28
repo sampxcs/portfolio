@@ -226,7 +226,7 @@ nav[class='active'] #nav-title {
   display: flex;
   height: 45px;
   justify-content: center;
-  left: 15px;
+  left: 1.25rem;
   padding: 10px;
   position: fixed;
   top: 10px;
@@ -281,7 +281,7 @@ nav[class='active'] #nav-title {
   box-shadow: 0 0 5px var(--shadow);
   display: block;
   height: 30px;
-  left: 15px;
+  left: 1.25rem;
   position: absolute;
   width: 30px;
 }
@@ -336,7 +336,7 @@ nav[class='active'] #nav-title {
 }
 .social-ul li {
   font-size: 16px;
-  margin: 5px 15px;
+  margin: 5px 1.25rem;
 }
 .social-ul i {
   color: var(--light-letter);
@@ -368,7 +368,7 @@ nav[class='active'] #nav-title {
 .card-perfil .rotate-words {
   background-color: var(--focus-background);
   border-radius: 5px;
-  box-shadow: 0 0 15px var(--shadow);
+  box-shadow: 0 0 1.25rem var(--shadow);
   display: inline;
   font-size: 12px;
   height: 30px;
@@ -431,7 +431,7 @@ nav[class='active'] #nav-title {
 .img-perfil::before {
   background-color: var(--focus-background);
   border-radius: 50%;
-  box-shadow: 0 0 15px var(--shadow);
+  box-shadow: 0 0 1.25rem var(--shadow);
   content: '';
   height: 100px;
   left: -20px;
@@ -523,7 +523,7 @@ section .section-title {
   border-bottom: 1px inset var(--border-light);
   border-radius: 10px;
   border-right: 1px inset var(--border-light);
-  box-shadow: 0 0 15px var(--shadow);
+  box-shadow: 0 0 1.25rem var(--shadow);
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -548,7 +548,7 @@ section .section-title {
 }
 .section-info-projects {
   display: none;
-  padding-top: 15px;
+  padding-top: 1.25rem;
   width: 50%;
   position: relative;
 }
@@ -570,7 +570,7 @@ section .section-title {
 }
 .item-see-more {
   background-color: var(--background);
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 1.25rem 1.25rem;
   box-shadow: 0 0 10px var(--shadow);
   font-size: 9px;
   height: 60px;
@@ -596,7 +596,7 @@ section .section-title {
   color: var(--light-letter);
   font-size: 18px;
   line-height: 1.4;
-  margin: 15px 0;
+  margin: 1.25rem 0;
   max-height: none;
 }
 
@@ -624,7 +624,7 @@ section .section-title {
   position: relative;
   display: none;
   height: 310px;
-  box-shadow: 0 0 15px var(--shadow);
+  box-shadow: 0 0 1.25rem var(--shadow);
   border-radius: 30px;
   position: relative;
   pointer-events: none;
@@ -640,11 +640,11 @@ section .section-title {
 .about-info-cmd-container::before {
   animation: moveShadowBefore 30s ease-in-out infinite;
   border-radius: 50%;
-  bottom: 15px;
+  bottom: 1.25rem;
   content: '';
   background-color: var(--focus-background-20);
   height: 200px;
-  left: 15px;
+  left: 1.25rem;
   position: absolute;
   width: 200px;
   filter: blur(100px);
@@ -657,8 +657,8 @@ section .section-title {
   content: '';
   height: 200px;
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 1.25rem;
+  top: 1.25rem;
   filter: blur(100px);
   width: 200px;
   z-index: -1;
@@ -793,9 +793,9 @@ section .section-title {
   font-size: 1rem;
   background-color: var(--dark-background);
   border-radius: 10px;
-  padding: 15px 30px;
+  padding: 1.25rem 30px;
   margin-right: 1.5rem;
-  box-shadow: 0 0 15px var(--shadow);
+  box-shadow: 0 0 1.25rem var(--shadow);
 }
 
 .tag i {
@@ -829,7 +829,7 @@ section .section-title {
   pointer-events: none;
   position: relative;
   min-height: 300px;
-  box-shadow: 0 0 15px var(--shadow);
+  box-shadow: 0 0 1.25rem var(--shadow);
   border-radius: 30px;
 }
 .section-contact-content {
@@ -942,7 +942,7 @@ footer hr {
     display: block;
   }
   nav {
-    padding: 20px 15px;
+    padding: 20px 1.25rem;
     width: 60px;
   }
   .btn-Nav {
@@ -1094,7 +1094,7 @@ footer hr {
   }
   .social-ul li {
     font-size: 18px;
-    margin: 15px;
+    margin: 1.25rem;
   }
   section {
     align-items: flex-start;
@@ -1216,7 +1216,7 @@ footer hr {
     max-width: 1120px;
   }
   .about-info-cmd {
-    box-shadow: 0 0 15px var(--shadow);
+    box-shadow: 0 0 1.25rem var(--shadow);
     height: 410px;
   }
   .about-info-cmd-content {

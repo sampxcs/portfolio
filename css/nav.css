@@ -1,0 +1,124 @@
+nav {
+  align-items: flex-start;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 2.5rem var(--shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  transition: width 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  width: 0;
+  z-index: 100;
+}
+nav[class='active'] {
+  background-color: var(--shadow);
+  border-right: 1px solid var(--shadow);
+  width: 350px;
+}
+nav[class='active'] #nav-title {
+  opacity: 0;
+}
+#nav-content {
+  margin-left: 60px;
+  min-width: 200px;
+  padding: 0 0 90px;
+}
+#nav-content ul {
+  font-size: 36px;
+  line-height: 3;
+}
+#nav-content a {
+  color: var(--focus-background);
+  display: inline-block;
+  font-weight: 700;
+}
+#nav-content .fa-arrow-right {
+  color: var(--focus-background);
+  font-size: 22px;
+  margin-left: 5px;
+}
+.nav-arrow {
+  transform: rotate(-90deg);
+}
+.btn-Nav {
+  align-items: center;
+  background-color: var(--background);
+  border-radius: 50%;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  left: 1.25rem;
+  padding: 10px;
+  position: fixed;
+  top: 10px;
+  width: 45px;
+  z-index: 300;
+}
+.nav-bars {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 1.75rem;
+  justify-content: space-around;
+  transition: 0.2s ease-in-out;
+  width: 2.5rem;
+}
+.btn-active {
+  transition: 0.2s ease-in-out;
+  transform: rotate(45deg);
+}
+.btn-active .bar {
+  background-color: var(--focus-background);
+}
+.btn-active .bar:nth-child(1) {
+  transform: rotate(90deg) translate(5px);
+}
+.btn-active .bar:nth-child(2) {
+  transform: translateY(-5px);
+}
+.bar {
+  background-color: var(--letter);
+  height: 2px;
+  transition: 0.2s ease-in-out;
+  width: 90%;
+}
+#nav-title {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  margin-left: 10px;
+  position: absolute;
+  top: 38%;
+  transition: 0.2s;
+}
+.nav-logo {
+  background-size: cover;
+  border-radius: 50%;
+  bottom: 1.75rem;
+  box-shadow: 0 0 5px var(--shadow);
+  display: block;
+  height: 2.5rem;
+  left: 1.25rem;
+  position: absolute;
+  width: 2.5rem;
+}
+
+/* -------------------------- TOGGLE THEME -------------------------- */
+
+.toggle-theme {
+  background: none;
+  border: none;
+  bottom: 0px;
+  color: var(--focus-background);
+  cursor: pointer;
+  font-size: 18px;
+  left: 75%;
+  margin: 22px;
+  position: absolute;
+}

@@ -17,7 +17,8 @@
 
   const showSection = () => {
     sections.forEach((section) => {
-      if (section.offsetTop - 700 < document.documentElement.scrollTop) {
+      if (section.offsetTop - 600 < document.documentElement.scrollTop) {
+        section.style.display = 'flex'
         section.style.opacity = '1'
         section.style.transform = 'translateY(0)'
       }
@@ -78,9 +79,17 @@
   const wrappers = $$('.wrapper-3d')
 
   wrappers.forEach((wrapper) => {
-    let { width, height } = wrapper.getBoundingClientRect()
+    let width = wrapper.getBoundingClientRect().width
+    let height = wrapper.getBoundingClientRect().height
     let halfWidth = width / 2
     let halfHeight = height / 2
+
+    window.addEventListener('scroll', () => {
+      width = wrapper.getBoundingClientRect().width
+      height = wrapper.getBoundingClientRect().height
+      halfWidth = width / 2
+      halfHeight = height / 2
+    })
 
     window.addEventListener('resize', () => {
       width = wrapper.getBoundingClientRect().width
@@ -91,6 +100,7 @@
 
     wrapper.addEventListener('mousemove', (event) => {
       const { offsetX, offsetY } = event
+      console.log(width, height)
 
       const rotateX = ((offsetX - halfWidth) / halfWidth) * 5
       const rotateY = ((offsetY - halfHeight) / halfHeight) * 5
