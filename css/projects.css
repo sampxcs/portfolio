@@ -4,9 +4,8 @@
   gap: 3.25rem;
 }
 .item-primary {
-  border-bottom: 1px inset var(--border-light);
+  border: 1px solid var(--border-light);
   border-radius: 10px;
-  border-right: 1px inset var(--border-light);
   box-shadow: 0 0 1.25rem var(--shadow);
   cursor: pointer;
   overflow: hidden;
@@ -41,7 +40,6 @@
 }
 .item-primary-mobile {
   display: none;
-  background-color: #fafafa;
 }
 .view-project-links {
   position: absolute;

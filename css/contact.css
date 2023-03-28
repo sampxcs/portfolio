@@ -14,6 +14,8 @@
 .section-contact-content {
   position: relative;
   background-color: var(--dark-background-40);
+  border: 1px solid var(--border-light);
+  border-radius: 2.5rem;
   backdrop-filter: blur(100px);
   padding: 2.5rem;
 }
@@ -21,19 +23,17 @@
   font-size: 38px;
   margin-bottom: 10px;
 }
-.section-contact address {
+.section-contact-content address {
   color: var(--letter);
   line-height: 2;
   margin: 1.75rem 0;
 }
-.section-contact address a {
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-}
 .section-contact-content h3 {
   color: var(--letter);
   font-size: 26px;
+}
+.section-contact-content hr {
+  margin: 1rem 0;
 }
 .section-contact-content p {
   color: var(--letter);

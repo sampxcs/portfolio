@@ -1,6 +1,6 @@
 :root {
   --background: #202423;
-  --border-light: #a1fff11b;
+  --border-light: #fff1;
   --cmd-arr: #2dc7e2;
   --cmd-const: #4c68e3;
   --cmd-green: #6eff76;
@@ -25,7 +25,7 @@
 }
 [data-theme='light'] {
   --background: #f5f5f5;
-  --border-light: #7eeff342;
+  --border-light: #0001;
   --cmd-arr: #25b3cc;
   --cmd-const: #3950b8;
   --cmd-num: #00a1db;
