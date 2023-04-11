@@ -11,7 +11,7 @@
     display: block;
   }
   nav {
-    padding: 1.25rem 1.25rem;
+    padding: 15px;
     width: 60px;
   }
   .btn-Nav {
@@ -135,7 +135,7 @@
   .img-perfil::before {
     height: 300px;
     left: -50px;
-    top: 11.25rem;
+    top: 135px;
     width: 300px;
   }
   .img-perfil::after {
@@ -149,7 +149,7 @@
 }
 @media (min-width: 1360px) {
   .img-perfil::before {
-    left: -11.25rem;
+    left: -135px;
   }
   .section-info-projects-01 {
     width: 35%;

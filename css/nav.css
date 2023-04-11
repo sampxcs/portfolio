@@ -1,7 +1,7 @@
 nav {
   align-items: flex-start;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 2.5rem var(--shadow);
+  box-shadow: 0 0 30px var(--shadow);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -49,7 +49,7 @@ nav[class='active'] #nav-title {
   display: flex;
   height: 45px;
   justify-content: center;
-  left: 1.25rem;
+  left: 14px;
   padding: 10px;
   position: fixed;
   top: 10px;
@@ -61,10 +61,10 @@ nav[class='active'] #nav-title {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 1.75rem;
+  height: 20px;
   justify-content: space-around;
   transition: 0.2s ease-in-out;
-  width: 2.5rem;
+  width: 30px;
 }
 .btn-active {
   transition: 0.2s ease-in-out;
@@ -100,13 +100,13 @@ nav[class='active'] #nav-title {
 .nav-logo {
   background-size: cover;
   border-radius: 50%;
-  bottom: 1.75rem;
+  bottom: 20px;
   box-shadow: 0 0 5px var(--shadow);
   display: block;
-  height: 2.5rem;
-  left: 1.25rem;
+  height: 30px;
+  left: 15px;
   position: absolute;
-  width: 2.5rem;
+  width: 30px;
 }
 
 /* -------------------------- TOGGLE THEME -------------------------- */

@@ -8,20 +8,20 @@
 .about-info-cmd {
   position: relative;
   display: none;
-  height: 25.75rem;
+  height: 310px;
   box-shadow: 0 0 1.25rem var(--shadow);
-  border-radius: 2.5rem;
+  border-radius: 30px;
   position: relative;
   pointer-events: none;
 }
 .about-info-cmd-content {
   background-color: var(--dark-background-40);
-  border-radius: 2.5rem;
+  border-radius: 30px;
   border: 1px solid var(--border-light);
   width: 100%;
   position: relative;
   height: 100%;
-  padding: 2.5rem 3.25rem;
+  padding: 2.5rem;
   backdrop-filter: blur(100px);
 }
 .about-info-cmd-container::before {
